@@ -13,9 +13,9 @@ export class DetailsService {
     password: '',
     mobileNumber: '',
     city:'',
-    familyMembers:{
-      relation:'',
-      name:''
-    }
+    familyMembers:[{
+      name:'Member',
+      relation:'Relation'
+    }]
   }
 }

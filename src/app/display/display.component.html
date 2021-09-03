@@ -1,10 +1,19 @@
-<br>
-<br>
-<h4>Name : {{details.formInfo.name}} </h4>
-<h4>Email : {{details.formInfo.email}} </h4>
-<h4>Mobile Number : {{details.formInfo.mobileNumber}} </h4>
-<h4>City : {{details.formInfo.city}} </h4>
-<h4>{{details.formInfo.familyMembers.name}}</h4>
-<h4>{{details.formInfo.familyMembers.relation}}</h4>
+<div class="container">
+    <br>
+    <h2>Display Component</h2>
+    <h4>Name : {{details.formInfo.name}} </h4>
+    <h4>Email : {{details.formInfo.email}} </h4>
+    <h4>Mobile Number : {{details.formInfo.mobileNumber}} </h4>
+    <h4>City : {{details.formInfo.city}} </h4>
+    <!-- <h4>{{details.formInfo.familyMembers.name}}</h4> -->
+    <!-- <h4>{{details.formInfo.familyMembers.relation}}</h4> -->
+    <!-- {{details.formInfo | json}} -->
+    <!-- {{details.formInfo.familyMembers | json}} -->
 
 
+    <h4 *ngFor="let member of details.formInfo.familyMembers">
+        <h4>{{member.name}} :  {{member.relation}} </h4>
+    </h4>
+    
+    
+</div>

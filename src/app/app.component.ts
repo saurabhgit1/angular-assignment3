@@ -9,6 +9,7 @@ import { DetailsService } from './details.service';
 })
 export class AppComponent {
   title = 'reactive-form';
+  count:number=1;
 
   get name(){
     return this.registrationForm.get('name');
@@ -23,7 +24,7 @@ export class AppComponent {
     //   relation: ['', Validators.required],
     //   rname: ['', Validators.required]
     // });
-
+    this.count++;
     this.familyMembers.push(this.fb.group({
       relation: ['', Validators.required],
       name: ['', Validators.required]
@@ -55,11 +56,15 @@ export class AppComponent {
     this.details.formInfo.email = this.registrationForm.value.email;
     this.details.formInfo.mobileNumber = this.registrationForm.value.mobileNumber;
     this.details.formInfo.city = this.registrationForm.value.city;
+
+    for(let i=0; i<this.count;i++){
+    this.details.formInfo.familyMembers.push(this.registrationForm.value.familyMembers.at(i));
+    }
     // this.details.formInfo.familyMembers.name = this.registrationForm.value.familyMembers.value.name;
     // this.details.formInfo.familyMembers.relation=this.registrationForm.value.familyMembers.value.relation;
     alert('submitted');}
     else{
-      alert('ivalid form');
+      alert('Form is Invalid.');
     }
       
     

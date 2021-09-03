@@ -1,4 +1,5 @@
-<div class="container-fluid">
+<div class="container">
+  <h1>Registration Component</h1>
   <form [formGroup]="registrationForm" action="">
     <div class="form-group">
       <label for="">Name</label>
@@ -23,7 +24,7 @@
     </div>
 
     <div class="form-group">
-      <label for="">EmailID</label>
+      <label for="">Email ID</label>
       <input
         [class.is-invalid]="
           registrationForm.get('email')!.invalid &&
@@ -102,7 +103,6 @@
           registrationForm.get('mobileNumber')!.touched
         "
         formControlName="mobileNumber"
-        type="number"
         class="form-control"
       />
 
@@ -148,10 +148,10 @@
     </div>
 
     <div>
-      <button type="button" (click)="addFamilyMembers()">
+      <button class="btn btn-success mt-4 mb-4 mx-5" type="button" (click)="addFamilyMembers()">
         Add Family Members
       </button>
-      <button type="button" (click)="deleteFamilyMembers()">Remove Family Members</button>
+      <button class="btn btn-danger mt-4 mb-4 mx-5" type="button" (click)="deleteFamilyMembers()">Remove Family Members</button>
 
       <div
         formArrayName="familyMembers"
@@ -167,7 +167,7 @@
         </div>
       </div>
     </div>
-    <button routerLink="/input/display" type="submit" (click)="onsubmit()">submit</button>
+    <button class="btn btn-primary mt-4 mb-4 mx-5" routerLink="/input/display" type="submit" (click)="onsubmit()">submit</button>
   </form>
 </div>
 <!-- {{ registrationForm.value | json }} -->
